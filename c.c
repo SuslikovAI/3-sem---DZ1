@@ -21,11 +21,13 @@ int main() {
         root = t;
     }
 
-    start:    printf("\n");
+    start:   
+    printf("\n");
     printf("1 - PUSH\n");
     printf("2 - POP \n");
     printf("3- ViVod all\n");
     printf("Enter - ");
+   
     int z;
     scanf("%d", &z);
 
@@ -40,15 +42,21 @@ int main() {
         goto start;
     }
 
-    if (z == 2) { if(n-1 == 0){ printf("NO ELEMET: ERROR\n"); goto start;}
+    if (z == 2) {
+        if(n-1 == 0){
+            printf("NO ELEMET: ERROR\n");
+            goto start;
+        }
         struct node* t = root;
         root = root->next;
-        free(t); n = n - 1;
+        free(t); 
+        n = n - 1;
         goto start;
     }
 
     if (z == 3) {
-        v = 0; printf("\n");
+        v = 0; 
+        printf("\n");
         for (int i = 0; i < n; ++i) {
             printf("%d\n", root->val);
             struct node* t = root;
